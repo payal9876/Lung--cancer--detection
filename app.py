@@ -6,7 +6,7 @@ app=Flask(__name__)
 @app.route('/',methods=['POST','GET'])
 
 def starting_model():
-    return "THIS IS JUST STARTING"
+    return render_template("index.html")
 
 
 
