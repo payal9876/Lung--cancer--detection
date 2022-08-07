@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lung cancer detection</title>
+    <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+    <style>
+      body{
+    text-align:center;
+    background-image: linear-gradient(-90deg, rgb(121, 78, 42), rgb(114, 34, 34));
+  }
+
+  h1{
+    color:white;
+  }
+  
+  #form{
+    display: grid;
+    grid-row-gap: 20px;
+    width:26%;
+    justify-content:center;
+    padding: 2%;
+    background-color: white;
+    position:relative;
+    left:35%;
+   }
+   input:hover{
+     border: 2px solid blue;
+     border-radius: 8%;
+   }
+  
+  button{
+    margin:0 37% 0 37%; 
+    width: 26%;
+    background-color: rgb(22, 3, 25);
+    border:2px solid rgb(25, 175, 235);
+    color:white;
+    font-weight: 900;
+    border-radius: 8%;
+  }
+  
+  @media(max-width:756px){
+    #form{
+    width:60%;
+    position:relative;
+    left:85%;
+    }
+  }
+  
+  @media(max-width:362px){
+    #form{
+    width:80%;
+    position:relative;
+    left:5%;
+    }
+  }
+  
+    </style>
+</head>
+<body>
+    <h1 id="title">BigMart Sales Prediction</h1>
+    <p id="description"></p>
+    <form id="form"  action="{{ url_for('predict') }}" method="POST" style="margin-bottom: 20px;">
+        <div>
+        <p>Contact Me</p>
+        <a target="_blank" href="https://github.com/payal9876"><i class="fab fa-github fa-3x contact-icon" style="size: 20px;"></i></a>
+        <a target="_blank" href="https://www.linkedin.com/in/payal-yadav-4a2238214/"><i class="fab fa-linkedin fa-3x contact-icon"></i></a>
+         </div>
+    
+         
+    <div class="form-group">
+        <label for="exampleFormControlInput1">AGE</label>
+        <input type="form-input" type="text" name="AGE" class="form-control" id="exampleFormControlInput1" placeholder="Weight" required="required">
+    >
+
+
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">GENDER</label>
+        <select class="form-control" id="exampleFormControlSelect1"  type="text" name="">
+            <option>MALE</option>
+            <option>FEMALE</option>
+    </div>
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">SMOKING</label>
+            <select class="form-control" id="exampleFormControlSelect1"  type="text" name="">
+                <option>YES</option>
+                <option>NO</option> 
+                
+     </div>
+         <div class="form-group">
+                <label for="exampleFormControlSelect1">ANXIETY </label>
+                <select class="form-control" id="exampleFormControlSelect1"  type="text" name="">
+                    <option>YES</option>
+     </div>
+        <div class="form-group">
+                    <label for="exampleFormControlSelect1">PEER_PRESSURE </label>
+                    <select class="form-control" id="exampleFormControlSelect1"  type="text" name="">
+                        <option>YES</option>
+     </div>
+         <div class="form-group">
+                     <label for="exampleFormControlSelect1">CHRONIC_DISEASE </label>
+                     <select class="form-control" id="exampleFormControlSelect1"  type="text" name="">
+                    <option>YES</option>
+                     <option>NO</option>             
+     </div>
+        <div class="form-group">
+                        <label for="exampleFormControlSelect1">FATIGUE</label>
+                        <select class="form-control" id="exampleFormControlSelect1"  type="text" name="">
+                            <option>MALE</option>
+                            <option>FEMALE</option>
+      </div>
+            <div class="form-group">
+                            <label for="exampleFormControlSelect1">ALLERGY</label>
+                            <select class="form-control" id="exampleFormControlSelect1"  type="text" name="">
+                                <option>YES</option>
+                                <option>NO</option> 
+                                
+     </div>
+            <div class="form-group">
+                                <label for="exampleFormControlSelect1">WHEEZING </label>
+                                <select class="form-control" id="exampleFormControlSelect1"  type="text" name="">
+                                    <option>YES</option>
+                                    <option>No</option>
+     </div>
+            <div class="form-group">
+                                    <label for="exampleFormControlSelect1">ALCOHOL CONSUMING </label>
+                                    <select class="form-control" id="exampleFormControlSelect1"  type="text" name="">
+                                        <option>YES</option>
+                                        <option>NO</option>
+    </div>
+             <div class="form-group">
+                                     <label for="exampleFormControlSelect1">COUGHING </label>
+                                     <select class="form-control" id="exampleFormControlSelect1"  type="text" name="">
+                                    <option>YES</option>
+                                     <option>NO</option>                            
+     </div>
+            <div class="form-group">
+                                    <label for="exampleFormControlSelect1">SHORTNESS OF BREATH </label>
+                                    <select class="form-control" id="exampleFormControlSelect1"  type="text" name="">
+                                    <option>YES</option>
+                                    <option>NO</option>
+    </div>
+            <div class="form-group">
+                                    <label for="exampleFormControlSelect1">SWALLOWING DIFFICULTY </label>
+                                    <select class="form-control" id="exampleFormControlSelect1"  type="text" name="">
+                                    <option>YES</option>
+                                    <option>NO</option>
+    </div>
+            <div class="form-group">
+                                   <label for="exampleFormControlSelect1">CHEST PAIN </label>
+                                    <select class="form-control" id="exampleFormControlSelect1"  type="text" name="">
+                                    <option>YES</option>
+                                <
+    <!-- <center><input type="submit" class="btn btn-success p-2" value="Predict"></center>
+          <center><input type="submit" class="btn btn-success p-2" value="Predict"></center> -->
+     <button type="submit" class="btn btn-success p-2" value="Predict">Predict</button>
+    </form>
+    </body>
+</html>
+
