@@ -12,7 +12,7 @@ app=Flask(__name__)
 def starting_model():
     return render_template("index.html")
 
-def prediction():
+def predict():
 
     AGE=int(request.form['AGE'])
     GENDER=(request.form['GENDER'])
