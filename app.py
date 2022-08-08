@@ -7,11 +7,13 @@ import numpy as np
 model=pickle.load(open('model.pkl','rb'))
 app=Flask(__name__)
 
-@app.route('/',methods=['POST','GET'])
+@app.route('/')
 
-def starting_model():
+def home():
     return render_template("index.html")
 
+
+@app.route('/',methods=['POST'])
 def predict():
 
     AGE=int(request.form['AGE'])
